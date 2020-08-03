@@ -1,0 +1,43 @@
+﻿@model FinalBlog.Models.Post
+
+@{
+    ViewData["Title"] = "Creator";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+@section Scripts{
+}
+
+@section Body{
+    <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+    <div class="panel-heading">
+    <h1 style="margin-left: 15%; margin-right: 15%;">Создание поста</h1>
+</div>
+<div class="panel-body">
+    @using (Html.BeginForm("Add", "Home"))
+    {
+      <div  style="margin-left: 15%; margin-right: 15%;">
+        <div class="form-group">
+            <label>Название поста</label>
+            @Html.TextBoxFor(m => m.Title, new { @class = "form-control", @style = "width: 40%;"})
+        </div>
+        <div class="form-group">
+            <label>Текст</label>
+           
+
+            @Html.TextAreaFor(m => m.Description, new { @class = "form-control", @style = "width: 100%; height: 450px;" })
+        </div>
+        <div class="form-group">
+            <label>Ваш ник</label>
+            @Html.TextBoxFor(m => m.Author, new { @class = "form-control", @style = "width: 40%;" })
+        </div>
+        <div class="form-group">
+            <label>Пароль для редактирования</label>
+            @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @style = "width: 40%;" })
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+      </div>
+    }
+}
+

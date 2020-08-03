@@ -1,0 +1,35 @@
+﻿@model FinalBlog.Models.Post
+
+
+@section Scripts{
+}
+
+@section Body{
+    <div class="content" style="margin-left: 15%; margin-right: 15%;">
+        <div>
+            <h1>@Model.Title</h1>
+        </div>
+
+        <div align="justify" style="font-family: 'Roboto', sans-serif;">
+            <h4><pre>@Model.Description</pre></h4>
+        </div>
+        <div align="right">
+            <h5>Автор: @Model.Author</h5>
+        </div>
+
+        <div>
+            <div id="disqus_thread"></div>
+                <script>
+
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://final-8.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+     
+           </div>
+
+    </div>
+}
